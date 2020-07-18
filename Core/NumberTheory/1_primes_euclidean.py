@@ -1,4 +1,4 @@
-# Ascertain prime factors, return as array
+# Gather prime factors, return as array
 #   Note: Positive Integers
 def prime_factors(n):
     primes = []
@@ -14,6 +14,7 @@ def prime_factors(n):
         else:
             # t = temporary variable for appending comparitive val to 'n' in steps[]
             t=n
+            # floor division
             n //= p
             # append prime to primes[], steps to steps[]
             primes.append(p)
