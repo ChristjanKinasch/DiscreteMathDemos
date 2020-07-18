@@ -1,7 +1,8 @@
 # Ascertain prime factors, return as array
+#   Note: Positive Integers
 def prime_factors(n):
-    primes=[]
-    steps=[]
+    primes = []
+    steps = []
     # volatile var for storage of prime val
     p = 2
     # Repeatedly check against smallest prime divisors starting at 2
@@ -22,38 +23,40 @@ def prime_factors(n):
     primes.append(n)
 
     # return primes[] & if steps[] = empty -> 'n' was prime, format return
-    return primes, steps if (len(steps) > 0) else "%s is prime" % n
+    return primes, steps if (len(steps) > 0) else "%s is Prime" % n
 
 #Greatest Common Divisor & Lowest Common Multiple, First Approach
 def gcd_lcm(x, y):
+    # grab only list of primes[], not steps[]
     xprimes = prime_factors(x)[0]
     yprimes = prime_factors(y)[0]
 
-    
+
 
     return xprimes, yprimes
 
 #Greatest Common Divisor with Euclidean Algorithm
+#   Note: Positive Integers for x < y
 def euclid_gcd(x, y):
-    x_steps=[x]
-    y_steps=[y]
-
-    return format_output(x_steps, x), format_output(y_steps, y)
-
-def format_output(steps, x):
-    return format("Steps: %s \n Out: %s" %(steps, x))
+    # Incremental steps
+    print("%s divides %s" %(y, x))
+    # Recursively call self if next step does not = 0 else return GCD
+    euclid_gcd(y%x, x) if (not y%x == 0) else print("GCD = %s" % x)
 
 #Test Cases
-#print(prime_factors(92))
-#print(prime_factors(655168))
-#print(prime_factors(109))
-#print(prime_factors(315))
-#print(prime_factors(5043))
+print("135: ", prime_factors(135))
+print("*"*30)
+print("75: ", prime_factors(75))
+print("*"*30)
+print("311: ", prime_factors(311))
 
-print(gcd_lcm(82,92))
+#print(gcd_lcm(82,92))
 #print(gcd_lcm(104, 22))
 #print(gcd_lcm(10294, 42))
 
-#print(euclid_gcd(33, 89))
-#print(euclid_gcd(912, 547))
-#print(euclid_gcd(432, 91))
+print("*"*30)
+euclid_gcd(12, 140)
+print("*"*30)
+euclid_gcd(73, 245)
+print("*"*30)
+euclid_gcd(84, 1254)
