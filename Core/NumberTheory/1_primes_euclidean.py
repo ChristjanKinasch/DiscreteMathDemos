@@ -25,16 +25,6 @@ def prime_factors(n):
     # return primes[] & if steps[] = empty -> 'n' was prime, format return
     return primes, steps if (len(steps) > 0) else "%s is Prime" % n
 
-#Greatest Common Divisor & Lowest Common Multiple, First Approach
-def gcd_lcm(x, y):
-    # grab only list of primes[], not steps[]
-    xprimes = prime_factors(x)[0]
-    yprimes = prime_factors(y)[0]
-
-
-
-    return xprimes, yprimes
-
 #Greatest Common Divisor with Euclidean Algorithm
 #   Note: Positive Integers for x < y
 def euclid_gcd(x, y):
@@ -49,10 +39,6 @@ print("*"*30)
 print("75: ", prime_factors(75))
 print("*"*30)
 print("311: ", prime_factors(311))
-
-#print(gcd_lcm(82,92))
-#print(gcd_lcm(104, 22))
-#print(gcd_lcm(10294, 42))
 
 print("*"*30)
 euclid_gcd(12, 140)
