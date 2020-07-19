@@ -34,6 +34,10 @@ def euclid_gcd(x, y):
     # Recursively call self if next step does not = 0 else return GCD
     euclid_gcd(y%x, x) if (not y%x == 0) else print("GCD = %s" % x)
 
+#   Functionally identical to the above function, does not print incremental steps. 
+#   written to experiment with lambda expressions
+# euclid_gcd = lambda x, y : euclid_gcd(y%x, x) if (not y%x == 0) else print("GCD = %s" % x)
+
 #Test Cases
 print("135: ", prime_factors(135))
 print("*"*30)
