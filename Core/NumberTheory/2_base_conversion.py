@@ -1,6 +1,6 @@
 def convert_base(n, base_from, base_to):
     num_arr = []
-
+    f=""
     # recursive function, takes the number and the base to convert to
     def conv_down(n, b):
         # store the remainder in parent scoped array
@@ -14,11 +14,11 @@ def convert_base(n, base_from, base_to):
     # handle conversion direction
     if base_from > base_to:
         conv_down(n, base_to)
-        # reverse the list
-        num_arr = num_arr[::-1]
-        # combine list and return as whole integer value
-        num_arr = [str(i) for i in num_arr]
-        return "".join(num_arr)
+        # Combine num_arr in reverse order and return value
+        for i in range(len(num_arr), 0, -1):
+            f+=str(num_arr[i-1])
+        return f
+
     else:
         conv_up(n, base_to)
 
