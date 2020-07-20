@@ -1,30 +1,34 @@
-def convert_base(n, base_from, base_to):
-    num_arr = []
-    f=""
-    # recursive function, takes the number and the base to convert to
-    def conv_down(n, b):
-        # store the remainder in parent scoped array
-        num_arr.append(n%b)
+# takes number to convert 'n'; base from 'ba'; base to 'bb'
+def convert_base(n, ba, b):
+    # replace numerals with alphabetic digits for systems > 10
+    # add letters for higher bases
+    overflow = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+    # array for storing remainders; variable for final output
+    num_arr, f = [], ""
+
+    # recursive function, takes the number and the base
+    def convert(n, b):
+        # store remainder, use letters if required
+        num_arr.append(n%b if n%b < 10 else overflow[(n%b)-10])
         # pass to next operation if n > 0, else remove last item (0)
-        conv_down(n//b, b) if (n > 0) else num_arr.pop()
-    
-    def conv_up(n, b):
-        print("up you go!")
+        convert(n//b, b) if (n > 0) else num_arr.pop()
 
-    # handle conversion direction
-    if base_from > base_to:
-        conv_down(n, base_to)
-        # Combine num_arr in reverse order and return value
-        for i in range(len(num_arr), 0, -1):
+    # call recursive function
+    convert(n, b)
+    # Combine num_arr in reverse order and return value    
+    for i in range(len(num_arr), 0, -1):
             f+=str(num_arr[i-1])
-        return f
+    return f
+    
 
-    else:
-        conv_up(n, base_to)
-
-print(convert_base(2473, 10, 8))
-print(convert_base(85, 10, 2))
-print(convert_base(2017,10, 5))
+print(convert_base(257, 10, 2))     # expect: 10 000 00 01
+print(convert_base(257, 10, 5))     # expect: 2012
+print(convert_base(257, 10, 8))     # expect: 401
+print(convert_base(192, 10, 3))     # expect: 21010
+print(convert_base(192, 10, 7))     # expect: 363
+print(convert_base(1506, 10, 11))   # expect: 114a
+print(convert_base(3995, 10, 12))   # expect: 238b
+print(convert_base(3995, 10, 19))   # expect: b15
 
 #TODO: 
 #   - upwards conversion function
