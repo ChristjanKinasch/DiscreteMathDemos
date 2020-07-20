@@ -2,7 +2,7 @@
 def convert_base(n, ba, b):
     # replace numerals with alphabetic digits for systems > 10
     # add letters for higher bases
-    overflow = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+    overflow = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"]
     # array for storing remainders; variable for final output
     num_arr, f = [], ""
 
@@ -20,7 +20,6 @@ def convert_base(n, ba, b):
             f+=str(num_arr[i-1])
     return f
     
-
 print(convert_base(257, 10, 2))     # expect: 10 000 00 01
 print(convert_base(257, 10, 5))     # expect: 2012
 print(convert_base(257, 10, 8))     # expect: 401
@@ -29,7 +28,4 @@ print(convert_base(192, 10, 7))     # expect: 363
 print(convert_base(1506, 10, 11))   # expect: 114a
 print(convert_base(3995, 10, 12))   # expect: 238b
 print(convert_base(3995, 10, 19))   # expect: b15
-
-#TODO: 
-#   - upwards conversion function
-#   - allow for systems > 10   
+print(convert_base(56566512, 10, 27))   # expect: b15
