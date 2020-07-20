@@ -39,13 +39,14 @@ def convert_base(n, ba, bb):
             f+=str(num_arr[i-1])
     return f
     
-print(convert_base(257, 10, 2))     # expect: 10 000 00 01
+print(convert_base(257, 10, 2))     # expect: 100000001
 print(convert_base(257, 10, 5))     # expect: 2012
 print(convert_base(192, 10, 3))     # expect: 21010
 print(convert_base(192, 10, 7))     # expect: 363
 print(convert_base(1506, 10, 11))   # expect: 114a
-print(convert_base(1506, 11, 3))   # expect: 2122221
+print(convert_base(1506, 11, 3))    # expect: 2122221
 print(convert_base(3995, 10, 12))   # expect: 238b
-print(convert_base(6841681, 10, 27))   # expect: cng0g
-print(convert_base(122, 3, 7))   # expect: 23
-print(convert_base(162, 7, 10))   # expect: 93
+# stress test
+print(convert_base(6841681, 10, 27))# expect: cng0g
+print(convert_base(122, 3, 7))      # expect: 23
+print(convert_base(162, 7, 10))     # expect: 93
