@@ -32,7 +32,13 @@ def euclid_gcd(x, y):
     # Incremental steps
     print("%s divides %s" %(y, x))
     # Recursively call self if next step does not = 0 else return GCD
-    euclid_gcd(y%x, x) if (not y%x == 0) else print("GCD = %s" % x)
+    return euclid_gcd(y%x, x) if (not y%x == 0) else x
+
+# uses return value of gcd to determine the LCM
+def lcm(a, b):
+    x = euclid_gcd(a, b)
+    print("LCM of %s and %s = %s" % (a, b, (a*b)//x))
+
 
 #   Functionally identical to the above function, does not print incremental steps. 
 #   written to experiment with lambda expressions
@@ -43,11 +49,17 @@ print("135: ", prime_factors(135))
 print("*"*30)
 print("75: ", prime_factors(75))
 print("*"*30)
-print("311: ", prime_factors(311))
 
 print("*"*30)
-euclid_gcd(12, 140)
+print("GCD of 12, 140 = ",euclid_gcd(12, 140))
 print("*"*30)
-euclid_gcd(73, 245)
+print("GCD of 73, 245 = ", euclid_gcd(73, 245))
 print("*"*30)
-euclid_gcd(84, 1254)
+print("GCD of 84, 1254 = ", euclid_gcd(84, 1254))
+
+print("*"*30)
+lcm(20, 50)
+print("*"*30)
+lcm(105, 43)
+print("*"*30)
+lcm(200, 13)
