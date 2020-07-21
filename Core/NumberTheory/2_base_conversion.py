@@ -50,4 +50,3 @@ print(convert_base(3995, 10, 12))   # expect: 238b
 print(convert_base(6841681, 10, 27))# expect: cng0g
 print(convert_base(122, 3, 7))      # expect: 23
 print(convert_base(162, 7, 10))     # expect: 93
-print(convert_base(9818223, 28, 6))     # expect: 93
