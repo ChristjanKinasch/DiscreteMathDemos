@@ -2,6 +2,7 @@
 def convert_base(n, ba, bb):
     # replace numerals with alphabetic digits for systems > 10
     # add letters for higher bases
+        # TODO: regex generate array??
     overflow = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
     overflow += ["k", "l", "m", "n", "o", "p", "q", "r", "s", "t"]
     # array for storing remainders; variable for final output
@@ -15,6 +16,7 @@ def convert_base(n, ba, bb):
         convert(n//b, b) if (n > 0) else num_arr.pop()
 
     # to convert between non-decimal systems, first convert to decimal
+    # currently does not convert non-numeric characters
     def to_dec(n, b):
         # convert 'n' to array
         dig_arr = [int(i) for i in str(n)]
