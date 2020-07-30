@@ -47,22 +47,27 @@ def lcm(a, b):
 
 
 #Test Cases
-print("135: ", prime_factors(135))
-print("*"*30)
-print("75: ", prime_factors(75))
-print("*"*30)
-print("9145: ", prime_factors(9145))
+# print("135: ", prime_factors(135))
+# print("*"*30)
+# print("75: ", prime_factors(75))
+# print("*"*30)
+# print("9145: ", prime_factors(9145))
 
-print("*"*30)
-print("GCD of 12, 140 = ",euclid_gcd(12, 140))
-print("*"*30)
-print("GCD of 73, 245 = ", euclid_gcd(73, 245))
-print("*"*30)
-print("GCD of 84, 1254 = ", euclid_gcd(84, 1254))
+# print("*"*30)
+# print("GCD of 12, 140 = ",euclid_gcd(12, 140))
+# print("*"*30)
+# print("GCD of 73, 245 = ", euclid_gcd(73, 245))
+# print("*"*30)
+# print("GCD of 84, 1254 = ", euclid_gcd(84, 1254))
 
-print("*"*30)
-lcm(20, 50)
-print("*"*30)
-lcm(105, 43)
-print("*"*30)
-lcm(200, 13)
+# print("GCD of 84, 1254 = ", euclid_gcd(84, 1254))
+
+print(euclid_gcd_b(38,45))
+
+
+# print("*"*30)
+# lcm(20, 50)
+# print("*"*30)
+# lcm(105, 43)
+# print("*"*30)
+# lcm(200, 13)
